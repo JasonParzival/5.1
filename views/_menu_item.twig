@@ -1,0 +1,11 @@
+{% import "_macros.twig" as macros %}
+
+<li class="list-group-item">
+    <div class="container">
+        <ul class="nav nav-pills">
+            {% for item in menu %}
+                {{ macros.btn(item.title, item.url, item.btn) }}
+            {% endfor %}
+        </ul>
+    </div>
+</li>
