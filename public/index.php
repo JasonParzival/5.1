@@ -25,15 +25,25 @@
         require_once "../controllers/BaseController.php";
         require_once "../controllers/TwigBaseController.php";
 
-        $loader = new \Twig\Loader\FilesystemLoader('../views');
+        //$loader = new \Twig\Loader\FilesystemLoader('../views');
 
-        $twig = new \Twig\Environment($loader);
+        //$twig = new \Twig\Environment($loader);
 
         $url = $_SERVER["REQUEST_URI"];
+
+        $loader = new \Twig\Loader\FilesystemLoader('../views');
+        $twig = new \Twig\Environment($loader, [
+            "debug" => true // добавляем тут debug режим
+        ]);
+        $twig->addExtension(new \Twig\Extension\DebugExtension()); // и активируем расширение
 
         $context = [];
 
         $controller = new Controller404($twig);
+
+
+        $pdo = new PDO("mysql:host=localhost;dbname=portal_db;charset=utf8", "root", "");
+
 
         if ($url == "/") {
             $controller = new MainController($twig);
@@ -55,6 +65,7 @@
             }
         }
         if ($controller) {
+            $controller->setPDO($pdo); // а тут передаем PDO в контроллер
             $controller->get();
         }
         ?>
