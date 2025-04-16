@@ -2,7 +2,7 @@
 require_once "GLaDOSController.php"; 
 
 class GLaDOSImageController extends GLaDOSController {
-    public $template = "base_image2.twig";
+    public $template = "base_image.twig";
     public $temp = "Картинка";
 
     public function getContext() : array

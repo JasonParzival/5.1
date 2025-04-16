@@ -5,6 +5,8 @@ class TwigBaseController extends BaseController {
     public $title = ""; // название страницы
     public $template = ""; // шаблон страницы
     public $temp = "";
+    public $caption = "";
+    public $urlhelp = "";
     public $nav = [ // добавил список словариков
         [
             "title" => "Главная",
@@ -82,12 +84,14 @@ class TwigBaseController extends BaseController {
     public function getContext() : array
     {
         $context = parent::getContext(); // вызываем родительский метод
-        $context['title'] = $this->title; // добавляем title в контекст
+        $context['title'] = $this->title; 
         $context['nav'] = $this->nav;
         $context['menuWheatley'] = $this->menuWheatley;
         $context['menuGLaDOS'] = $this->menuGLaDOS;
         $context['newnav'] = $this->newnav;
         $context['temp'] = $this->temp;
+        $context['urlhelp'] = $this->urlhelp;
+        $context['caption'] = $this->caption;
 
         return $context;
     }

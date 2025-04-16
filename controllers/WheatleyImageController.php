@@ -2,7 +2,7 @@
 require_once "WheatleyController.php"; 
 
 class WheatleyImageController extends WheatleyController {
-    public $template = "base_image1.twig";
+    public $template = "base_image.twig";
     public $temp = "Картинка";
 
     public function getContext() : array
