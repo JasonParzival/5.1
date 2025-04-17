@@ -1,149 +1,16 @@
 {% extends "__layout.twig" %}
 
 {% block content %}
-{% for object in space_objects %}
-    Название: {{ object.title }} <br>  
-{% endfor %}
 
 <ul class="list-group">
     <li class="list-group-item">
         Вы на главной странице, этот сайт посвящён вселенной Portal.<br>
     </li>
-    {% include "_menu_item.twig" with {menu: menuWheatley} %}
-    {% include "_menu_item.twig" with {menu: menuGLaDOS} %}
+    <div class="row">
+        {% for object in space_objects %}
+            {% include "_menu_item.twig" with {menu: object} %} 
+        {% endfor %}
+    </div>
 </ul>
-
-<div class="row">
-    <div class="col">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <ul class="list-group">
-                    <li class="list-group-item" style="text-align: center;">
-                        <img src="../images/Chell.jfif" alt="chell" style="width: 100%; max-width: 200px; height: auto;">
-                    </li>
-                </ul>
-                <div class="row">
-                    <a class="btn btn-primary" style=" width: 100%; text-align: center; margin-top: 10px;" href="/wheatley">
-                        Уитли
-                    </a>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-auto d-flex gap-2">
-                        <a class="btn btn-link" href="/wheatley/image">
-                            Картинка
-                        </a>
-                        <a class="btn btn-link" href="/wheatley/info">
-                            Описание
-                        </a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="col">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <img src="../images/Chell.jfif" alt="chell" style="width: 100%; max-width: 200px; height: auto;">
-                    </li>
-                </ul>
-                <div class="row">
-                    <a class="btn btn-primary" style=" width: 100%; text-align: center; margin-top: 10px;" href="/wheatley">
-                        Уитли
-                    </a>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-auto d-flex gap-2">
-                        <a class="btn btn-link" href="/wheatley/image">
-                            Картинка
-                        </a>
-                        <a class="btn btn-link" href="/wheatley/info">
-                            Описание
-                        </a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="col">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <img src="../images/Chell.jfif" alt="chell" style="width: 100%; max-width: 200px; height: auto;">
-                    </li>
-                </ul>
-                <div class="row">
-                    <a class="btn btn-primary" style=" width: 100%; text-align: center; margin-top: 10px;" href="/wheatley">
-                        Уитли
-                    </a>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-auto d-flex gap-2">
-                        <a class="btn btn-link" href="/wheatley/image">
-                            Картинка
-                        </a>
-                        <a class="btn btn-link" href="/wheatley/info">
-                            Описание
-                        </a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="col">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <img src="../images/Chell.jfif" alt="chell" style="width: 100%; max-width: 200px; height: auto;">
-                    </li>
-                </ul>
-                <div class="row">
-                    <a class="btn btn-primary" style=" width: 100%; text-align: center; margin-top: 10px;" href="/wheatley">
-                        Уитли
-                    </a>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-auto d-flex gap-2">
-                        <a class="btn btn-link" href="/wheatley/image">
-                            Картинка
-                        </a>
-                        <a class="btn btn-link" href="/wheatley/info">
-                            Описание
-                        </a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="col">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <img src="../images/Chell.jfif" alt="chell" style="width: 100%; max-width: 200px; height: auto;">
-                    </li>
-                </ul>
-                <div class="row">
-                    <a class="btn btn-primary" style=" width: 100%; text-align: center; margin-top: 10px;" href="/wheatley">
-                        Уитли
-                    </a>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-auto d-flex gap-2">
-                        <a class="btn btn-link" href="/wheatley/image">
-                            Картинка
-                        </a>
-                        <a class="btn btn-link" href="/wheatley/info">
-                            Описание
-                        </a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
 
 {% endblock %}
